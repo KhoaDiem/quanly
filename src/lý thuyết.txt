@@ -1,0 +1,16 @@
+QuanlyController: /nhanvien
+-Hiển thị danh sách
+	-Route: List
+	-ShowListnhanvien()
+	-view: listdanhsach:jsp
+-Thêm nhân viên
+-Sửa nhân viên:
+	-Route: add
+	-viewquanly()
+	-view: viewdanhsachnhanvien.jsp
+-Xóa nhân viên:
+	-Route: delete
+	-deletenhanvien()
+-Save add/update
+	-Route: save
+	-savenhanvien()
