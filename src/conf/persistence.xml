@@ -1,23 +1,38 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <persistence version="2.1" xmlns="http://xmlns.jcp.org/xml/ns/persistence" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/persistence http://xmlns.jcp.org/xml/ns/persistence/persistence_2_1.xsd">
-  <persistence-unit name="QuanlyPU" transaction-type="RESOURCE_LOCAL">
-    <provider>org.eclipse.persistence.jpa.PersistenceProvider</provider>
-    <class>NKD.entity.Category</class>
-    <class>NKD.entity.Course</class>
-    <class>NKD.entity.Trainer</class>
-    <class>NKD.entity.TraineeCourse</class>
-    <class>NKD.entity.CategoryCourse</class>
-    <class>NKD.entity.CourseTrainer</class>
-    <class>NKD.entity.Account</class>
-    <class>NKD.entity.Trainee</class>
-    <class>NKD.entity.CourseTopic</class>
-    <class>NKD.entity.Topic</class>
-    <exclude-unlisted-classes>false</exclude-unlisted-classes>
-    <properties>
-      <property name="javax.persistence.jdbc.url" value="jdbc:mysql://localhost:3306/quanlynhanvien"/>
-      <property name="javax.persistence.jdbc.user" value="root"/>
-      <property name="javax.persistence.jdbc.driver" value="com.mysql.cj.jdbc.Driver"/>
-      <property name="javax.persistence.jdbc.password" value=""/>
-    </properties>
-  </persistence-unit>
+    <persistence-unit name="QuanlyPU" transaction-type="RESOURCE_LOCAL">
+        <provider>org.eclipse.persistence.jpa.PersistenceProvider</provider>
+        <class>NKD.entity.Category</class>
+    
+        <class>NKD.entity.Course</class>
+    
+        <class>NKD.entity.Trainer</class>
+    
+        <class>NKD.entity.TraineeCourse</class>
+    
+        <class>NKD.entity.CategoryCourse</class>
+    
+        <class>NKD.entity.CourseTrainer</class>
+    
+        <class>NKD.entity.Account</class>
+    
+        <class>NKD.entity.Trainee</class>
+    
+        <class>NKD.entity.CourseTopic</class>
+    
+        <class>NKD.entity.Topic</class>
+        
+    
+    </persistence-unit>
+        
+    
+    
+        <exclude-unlisted-classes>false</exclude-unlisted-classes>
+        <properties>
+            <property name="javax.persistence.jdbc.url" value="jdbc:mysql://localhost:3306/quanlynhanvien"/>
+            <property name="javax.persistence.jdbc.user" value="root"/>
+            <property name="javax.persistence.jdbc.driver" value="com.mysql.cj.jdbc.Driver"/>
+            <property name="javax.persistence.jdbc.password" value=""/>
+        </properties>
+    </persistence-unit>
 </persistence>

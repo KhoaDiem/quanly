@@ -1,0 +1,9 @@
+NKD/entity/CourseTrainerPK_.java
+NKD/entity/CourseTrainer_.java
+NKD/entity/Category_.java
+NKD/entity/CourseTopicPK_.java
+NKD/entity/TraineeCoursePK_.java
+NKD/entity/Trainee_.java
+NKD/entity/CourseTopic_.java
+NKD/entity/Account_.java
+NKD/entity/TraineeCourse_.java

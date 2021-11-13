@@ -21,8 +21,8 @@ import javax.xml.bind.annotation.XmlRootElement;
 @XmlRootElement
 @NamedQueries({
     @NamedQuery(name = "TraineeCourse.findAll", query = "SELECT t FROM TraineeCourse t"),
-    @NamedQuery(name = "TraineeCourse.findByCourseId", query = "SELECT t FROM TraineeCourse t WHERE t.traineeCoursePK.courseId = :courseId"),
-    @NamedQuery(name = "TraineeCourse.findByTraineeId", query = "SELECT t FROM TraineeCourse t WHERE t.traineeCoursePK.traineeId = :traineeId")})
+    @NamedQuery(name = "TraineeCourse.findByCourseID", query = "SELECT t FROM TraineeCourse t WHERE t.traineeCoursePK.courseID = :courseID"),
+    @NamedQuery(name = "TraineeCourse.findByTraineeID", query = "SELECT t FROM TraineeCourse t WHERE t.traineeCoursePK.traineeID = :traineeID")})
 public class TraineeCourse implements Serializable {
 
     private static final long serialVersionUID = 1L;
@@ -36,8 +36,8 @@ public class TraineeCourse implements Serializable {
         this.traineeCoursePK = traineeCoursePK;
     }
 
-    public TraineeCourse(int courseId, int traineeId) {
-        this.traineeCoursePK = new TraineeCoursePK(courseId, traineeId);
+    public TraineeCourse(int courseID, int traineeID) {
+        this.traineeCoursePK = new TraineeCoursePK(courseID, traineeID);
     }
 
     public TraineeCoursePK getTraineeCoursePK() {

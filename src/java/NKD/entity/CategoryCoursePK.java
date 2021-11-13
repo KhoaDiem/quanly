@@ -17,41 +17,41 @@ import javax.persistence.Embeddable;
 public class CategoryCoursePK implements Serializable {
 
     @Basic(optional = false)
-    @Column(name = "course_id")
-    private int courseId;
+    @Column(name = "courseID")
+    private int courseID;
     @Basic(optional = false)
-    @Column(name = "catefory_id")
-    private int cateforyId;
+    @Column(name = "categoryID")
+    private int categoryID;
 
     public CategoryCoursePK() {
     }
 
-    public CategoryCoursePK(int courseId, int cateforyId) {
-        this.courseId = courseId;
-        this.cateforyId = cateforyId;
+    public CategoryCoursePK(int courseID, int categoryID) {
+        this.courseID = courseID;
+        this.categoryID = categoryID;
     }
 
-    public int getCourseId() {
-        return courseId;
+    public int getCourseID() {
+        return courseID;
     }
 
-    public void setCourseId(int courseId) {
-        this.courseId = courseId;
+    public void setCourseID(int courseID) {
+        this.courseID = courseID;
     }
 
-    public int getCateforyId() {
-        return cateforyId;
+    public int getCategoryID() {
+        return categoryID;
     }
 
-    public void setCateforyId(int cateforyId) {
-        this.cateforyId = cateforyId;
+    public void setCategoryID(int categoryID) {
+        this.categoryID = categoryID;
     }
 
     @Override
     public int hashCode() {
         int hash = 0;
-        hash += (int) courseId;
-        hash += (int) cateforyId;
+        hash += (int) courseID;
+        hash += (int) categoryID;
         return hash;
     }
 
@@ -62,10 +62,10 @@ public class CategoryCoursePK implements Serializable {
             return false;
         }
         CategoryCoursePK other = (CategoryCoursePK) object;
-        if (this.courseId != other.courseId) {
+        if (this.courseID != other.courseID) {
             return false;
         }
-        if (this.cateforyId != other.cateforyId) {
+        if (this.categoryID != other.categoryID) {
             return false;
         }
         return true;
@@ -73,7 +73,7 @@ public class CategoryCoursePK implements Serializable {
 
     @Override
     public String toString() {
-        return "NKD.entity.CategoryCoursePK[ courseId=" + courseId + ", cateforyId=" + cateforyId + " ]";
+        return "NKD.entity.CategoryCoursePK[ courseID=" + courseID + ", categoryID=" + categoryID + " ]";
     }
     
 }

@@ -17,41 +17,41 @@ import javax.persistence.Embeddable;
 public class TraineeCoursePK implements Serializable {
 
     @Basic(optional = false)
-    @Column(name = "course_id")
-    private int courseId;
+    @Column(name = "courseID")
+    private int courseID;
     @Basic(optional = false)
-    @Column(name = "trainee_id")
-    private int traineeId;
+    @Column(name = "traineeID")
+    private int traineeID;
 
     public TraineeCoursePK() {
     }
 
-    public TraineeCoursePK(int courseId, int traineeId) {
-        this.courseId = courseId;
-        this.traineeId = traineeId;
+    public TraineeCoursePK(int courseID, int traineeID) {
+        this.courseID = courseID;
+        this.traineeID = traineeID;
     }
 
-    public int getCourseId() {
-        return courseId;
+    public int getCourseID() {
+        return courseID;
     }
 
-    public void setCourseId(int courseId) {
-        this.courseId = courseId;
+    public void setCourseID(int courseID) {
+        this.courseID = courseID;
     }
 
-    public int getTraineeId() {
-        return traineeId;
+    public int getTraineeID() {
+        return traineeID;
     }
 
-    public void setTraineeId(int traineeId) {
-        this.traineeId = traineeId;
+    public void setTraineeID(int traineeID) {
+        this.traineeID = traineeID;
     }
 
     @Override
     public int hashCode() {
         int hash = 0;
-        hash += (int) courseId;
-        hash += (int) traineeId;
+        hash += (int) courseID;
+        hash += (int) traineeID;
         return hash;
     }
 
@@ -62,10 +62,10 @@ public class TraineeCoursePK implements Serializable {
             return false;
         }
         TraineeCoursePK other = (TraineeCoursePK) object;
-        if (this.courseId != other.courseId) {
+        if (this.courseID != other.courseID) {
             return false;
         }
-        if (this.traineeId != other.traineeId) {
+        if (this.traineeID != other.traineeID) {
             return false;
         }
         return true;
@@ -73,7 +73,7 @@ public class TraineeCoursePK implements Serializable {
 
     @Override
     public String toString() {
-        return "NKD.entity.TraineeCoursePK[ courseId=" + courseId + ", traineeId=" + traineeId + " ]";
+        return "NKD.entity.TraineeCoursePK[ courseID=" + courseID + ", traineeID=" + traineeID + " ]";
     }
     
 }

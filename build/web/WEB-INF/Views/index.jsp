@@ -2,18 +2,63 @@
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
     "http://www.w3.org/TR/html4/loose.dtd">
 
-<html>
+<!DOCTYPE html>
+<html lang="en">
     <head>
-        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>Welcome to Spring Web MVC project</title>
+        <title>Admin Page</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
     </head>
-
     <body>
-        <p>Hello! This is the default welcome page for a Spring Web MVC project.</p>
-        <p><i>To display a different welcome page for this project, modify</i>
-            <tt>index.jsp</tt> <i>, or create your own welcome page then change
-                the redirection in</i> <tt>redirect.jsp</tt> <i>to point to the new
-                welcome page and also update the welcome-file setting in</i>
-            <tt>web.xml</tt>.</p>
-    </body>
+       <h1 class="text-center">ADMIN PAGE</h1>
+        
+   <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+  <form class="form-inline" action="/action_page.php">
+      <button class="btn btn-success mr-sm-3" type="submit">Search</button>
+    <input class="form-control mr-sm-10" type="text" placeholder="Search">
+  </form>
+   </nav>
+    <h7>---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------</h7>
+    <div class="container-fluid">
+  <div class="row">
+      <div class="col-sm-2" style="background-color:lavender;">
+           <div class="list-group">
+                <a href="index.html" class="list-group-item active main-color-bg">
+                    <span class="glyphicon glyphicon-cog" aria-hidden="true"></span> Dashboard
+                </a>
+                <a href="quanly/listAccount.html" class="list-group-item"><span class="glyphicon glyphicon-list-alt" aria-hidden="true"></span> Account Management</a>
+                <a href="quanly/listTrainer.html" class="list-group-item"><span class="glyphicon glyphicon-user" aria-hidden="true"></span> Trainer Management</a>
+                <a href="quanly/listTrainee.html" class="list-group-item"><span class="glyphicon glyphicon-user" aria-hidden="true"></span> Trainee Management</a>
+                <a href="quanly/listSource.html" class="list-group-item"><span class="glyphicon glyphicon-user" aria-hidden="true"></span> Source Management</a>
+                <a href="quanly/listTopic.html" class="list-group-item"><span class="glyphicon glyphicon-user" aria-hidden="true"></span> Topic Management</a>
+                <a href="quanly/listCategory.html" class="list-group-item"><span class="glyphicon glyphicon-user" aria-hidden="true"></span> Category Management</a>
+
+            </div>
+      </div>
+      <div class="col-sm-10" style="background-color:lavenderblush;">
+          <div class="panel panel-default">
+            <div class="panel-heading main-color-bg">
+              <h3 class="panel-title">ADMIN PAGE</h3>
+            </div>
+            <div class="panel-body">
+              <div class="row">
+                <div class="col-md-12">
+                  <input class="form-control" type="text" placeholder="Home page">
+                </div>
+                  <div>
+                      <img src="Admin.png">
+                  </div> 
+              </div>
+            </div>
+              
+      </div>
+  </div>
+</div>
+           
+        
+</body>
 </html>

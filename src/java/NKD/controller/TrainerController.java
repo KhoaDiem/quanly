@@ -1,5 +1,4 @@
 package NKD.controller;
-import NKD.entity.Trainee;
 import NKD.entity.Trainer;
 import java.util.List;
 import javax.persistence.EntityManager;
@@ -15,26 +14,27 @@ import org.springframework.web.bind.annotation.RequestMethod;
 @RequestMapping(value = "quanly")
 public class TrainerController {
     @RequestMapping(value="/listTrainer",method = RequestMethod.GET)
-    public String ShowList(ModelMap modelmap){ 
+    public String ShowList(ModelMap modelMap){ 
         EntityManagerFactory factory = Persistence.createEntityManagerFactory("QuanlyPU");
         EntityManager em = factory.createEntityManager(); 
-        Query q = em.createNamedQuery("Trainer.findAll",Trainee.class);
-        List <Trainer> TrainerList = q.getResultList();
-        modelmap.put("TrainerList", TrainerList);
-        
-        
-        return "listTrainer";
+        Query q = em.createNamedQuery("Trainer.findAll",Trainer.class);
+        List <Trainer> trainerList = q.getResultList();
+        modelMap.put("trainerList", trainerList);
+        return "trainerList";
     }
-     @RequestMapping(value="/viewds",method = RequestMethod.GET)
-    public String viewds(){  
-        return "listTrainer";
+    
+    
+    
+     @RequestMapping(value="/addTrainer",method = RequestMethod.GET)
+    public String adddTrainer(){  
+        return "addTrainer";
     }
-     @RequestMapping(value="/save",method = RequestMethod.POST)
+     @RequestMapping(value="/saveTrainer",method = RequestMethod.POST)
     public String Save(){  
-        return "listTrainer";
+        return "trainerList";
     }
-     @RequestMapping(value="/delete",method = RequestMethod.POST)
-    public String Delete(){  
-        return "listTrainer";
+     @RequestMapping(value="/deleteTrainer",method = RequestMethod.POST)
+    public String DeleteTrainer(){  
+        return "trainerList ";
     }
 }

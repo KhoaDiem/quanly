@@ -21,8 +21,8 @@ import javax.xml.bind.annotation.XmlRootElement;
 @XmlRootElement
 @NamedQueries({
     @NamedQuery(name = "CategoryCourse.findAll", query = "SELECT c FROM CategoryCourse c"),
-    @NamedQuery(name = "CategoryCourse.findByCourseId", query = "SELECT c FROM CategoryCourse c WHERE c.categoryCoursePK.courseId = :courseId"),
-    @NamedQuery(name = "CategoryCourse.findByCateforyId", query = "SELECT c FROM CategoryCourse c WHERE c.categoryCoursePK.cateforyId = :cateforyId")})
+    @NamedQuery(name = "CategoryCourse.findByCourseID", query = "SELECT c FROM CategoryCourse c WHERE c.categoryCoursePK.courseID = :courseID"),
+    @NamedQuery(name = "CategoryCourse.findByCategoryID", query = "SELECT c FROM CategoryCourse c WHERE c.categoryCoursePK.categoryID = :categoryID")})
 public class CategoryCourse implements Serializable {
 
     private static final long serialVersionUID = 1L;
@@ -36,8 +36,8 @@ public class CategoryCourse implements Serializable {
         this.categoryCoursePK = categoryCoursePK;
     }
 
-    public CategoryCourse(int courseId, int cateforyId) {
-        this.categoryCoursePK = new CategoryCoursePK(courseId, cateforyId);
+    public CategoryCourse(int courseID, int categoryID) {
+        this.categoryCoursePK = new CategoryCoursePK(courseID, categoryID);
     }
 
     public CategoryCoursePK getCategoryCoursePK() {

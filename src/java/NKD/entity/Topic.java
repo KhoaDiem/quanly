@@ -25,7 +25,7 @@ import javax.xml.bind.annotation.XmlRootElement;
 @XmlRootElement
 @NamedQueries({
     @NamedQuery(name = "Topic.findAll", query = "SELECT t FROM Topic t"),
-    @NamedQuery(name = "Topic.findByTopicId", query = "SELECT t FROM Topic t WHERE t.topicId = :topicId"),
+    @NamedQuery(name = "Topic.findByTopicID", query = "SELECT t FROM Topic t WHERE t.topicID = :topicID"),
     @NamedQuery(name = "Topic.findByTopicName", query = "SELECT t FROM Topic t WHERE t.topicName = :topicName"),
     @NamedQuery(name = "Topic.findByDescription", query = "SELECT t FROM Topic t WHERE t.description = :description")})
 public class Topic implements Serializable {
@@ -34,8 +34,8 @@ public class Topic implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Basic(optional = false)
-    @Column(name = "topic_id")
-    private Integer topicId;
+    @Column(name = "topicID")
+    private Integer topicID;
     @Basic(optional = false)
     @Column(name = "topicName")
     private String topicName;
@@ -46,22 +46,22 @@ public class Topic implements Serializable {
     public Topic() {
     }
 
-    public Topic(Integer topicId) {
-        this.topicId = topicId;
+    public Topic(Integer topicID) {
+        this.topicID = topicID;
     }
 
-    public Topic(Integer topicId, String topicName, String description) {
-        this.topicId = topicId;
+    public Topic(Integer topicID, String topicName, String description) {
+        this.topicID = topicID;
         this.topicName = topicName;
         this.description = description;
     }
 
-    public Integer getTopicId() {
-        return topicId;
+    public Integer getTopicID() {
+        return topicID;
     }
 
-    public void setTopicId(Integer topicId) {
-        this.topicId = topicId;
+    public void setTopicID(Integer topicID) {
+        this.topicID = topicID;
     }
 
     public String getTopicName() {
@@ -83,7 +83,7 @@ public class Topic implements Serializable {
     @Override
     public int hashCode() {
         int hash = 0;
-        hash += (topicId != null ? topicId.hashCode() : 0);
+        hash += (topicID != null ? topicID.hashCode() : 0);
         return hash;
     }
 
@@ -94,7 +94,7 @@ public class Topic implements Serializable {
             return false;
         }
         Topic other = (Topic) object;
-        if ((this.topicId == null && other.topicId != null) || (this.topicId != null && !this.topicId.equals(other.topicId))) {
+        if ((this.topicID == null && other.topicID != null) || (this.topicID != null && !this.topicID.equals(other.topicID))) {
             return false;
         }
         return true;
@@ -102,7 +102,7 @@ public class Topic implements Serializable {
 
     @Override
     public String toString() {
-        return "NKD.entity.Topic[ topicId=" + topicId + " ]";
+        return "NKD.entity.Topic[ topicID=" + topicID + " ]";
     }
     
 }

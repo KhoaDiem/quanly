@@ -25,21 +25,21 @@ import javax.xml.bind.annotation.XmlRootElement;
 @XmlRootElement
 @NamedQueries({
     @NamedQuery(name = "Trainer.findAll", query = "SELECT t FROM Trainer t"),
-    @NamedQuery(name = "Trainer.findByUserId", query = "SELECT t FROM Trainer t WHERE t.userId = :userId"),
+    @NamedQuery(name = "Trainer.findByTrainerID", query = "SELECT t FROM Trainer t WHERE t.trainerID = :trainerID"),
     @NamedQuery(name = "Trainer.findByTrainerName", query = "SELECT t FROM Trainer t WHERE t.trainerName = :trainerName"),
     @NamedQuery(name = "Trainer.findByEducation", query = "SELECT t FROM Trainer t WHERE t.education = :education"),
-    @NamedQuery(name = "Trainer.findByTypeWork", query = "SELECT t FROM Trainer t WHERE t.typeWork = :typeWork"),
-    @NamedQuery(name = "Trainer.findByWorkingPlace", query = "SELECT t FROM Trainer t WHERE t.workingPlace = :workingPlace"),
+    @NamedQuery(name = "Trainer.findByTypework", query = "SELECT t FROM Trainer t WHERE t.typework = :typework"),
+    @NamedQuery(name = "Trainer.findByWorkingplace", query = "SELECT t FROM Trainer t WHERE t.workingplace = :workingplace"),
     @NamedQuery(name = "Trainer.findByTelephone", query = "SELECT t FROM Trainer t WHERE t.telephone = :telephone"),
-    @NamedQuery(name = "Trainer.findByEmailAddress", query = "SELECT t FROM Trainer t WHERE t.emailAddress = :emailAddress")})
+    @NamedQuery(name = "Trainer.findByEmail", query = "SELECT t FROM Trainer t WHERE t.email = :email")})
 public class Trainer implements Serializable {
 
     private static final long serialVersionUID = 1L;
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Basic(optional = false)
-    @Column(name = "user_id")
-    private Integer userId;
+    @Column(name = "trainerID")
+    private Integer trainerID;
     @Basic(optional = false)
     @Column(name = "trainerName")
     private String trainerName;
@@ -47,41 +47,41 @@ public class Trainer implements Serializable {
     @Column(name = "education")
     private String education;
     @Basic(optional = false)
-    @Column(name = "type_work")
-    private String typeWork;
+    @Column(name = "typework")
+    private String typework;
     @Basic(optional = false)
-    @Column(name = "working_place")
-    private String workingPlace;
+    @Column(name = "workingplace")
+    private String workingplace;
     @Basic(optional = false)
     @Column(name = "telephone")
     private String telephone;
     @Basic(optional = false)
-    @Column(name = "email_address")
-    private String emailAddress;
+    @Column(name = "email")
+    private String email;
 
     public Trainer() {
     }
 
-    public Trainer(Integer userId) {
-        this.userId = userId;
+    public Trainer(Integer trainerID) {
+        this.trainerID = trainerID;
     }
 
-    public Trainer(Integer userId, String trainerName, String education, String typeWork, String workingPlace, String telephone, String emailAddress) {
-        this.userId = userId;
+    public Trainer(Integer trainerID, String trainerName, String education, String typework, String workingplace, String telephone, String email) {
+        this.trainerID = trainerID;
         this.trainerName = trainerName;
         this.education = education;
-        this.typeWork = typeWork;
-        this.workingPlace = workingPlace;
+        this.typework = typework;
+        this.workingplace = workingplace;
         this.telephone = telephone;
-        this.emailAddress = emailAddress;
+        this.email = email;
     }
 
-    public Integer getUserId() {
-        return userId;
+    public Integer getTrainerID() {
+        return trainerID;
     }
 
-    public void setUserId(Integer userId) {
-        this.userId = userId;
+    public void setTrainerID(Integer trainerID) {
+        this.trainerID = trainerID;
     }
 
     public String getTrainerName() {
@@ -100,20 +100,20 @@ public class Trainer implements Serializable {
         this.education = education;
     }
 
-    public String getTypeWork() {
-        return typeWork;
+    public String getTypework() {
+        return typework;
     }
 
-    public void setTypeWork(String typeWork) {
-        this.typeWork = typeWork;
+    public void setTypework(String typework) {
+        this.typework = typework;
     }
 
-    public String getWorkingPlace() {
-        return workingPlace;
+    public String getWorkingplace() {
+        return workingplace;
     }
 
-    public void setWorkingPlace(String workingPlace) {
-        this.workingPlace = workingPlace;
+    public void setWorkingplace(String workingplace) {
+        this.workingplace = workingplace;
     }
 
     public String getTelephone() {
@@ -124,18 +124,18 @@ public class Trainer implements Serializable {
         this.telephone = telephone;
     }
 
-    public String getEmailAddress() {
-        return emailAddress;
+    public String getEmail() {
+        return email;
     }
 
-    public void setEmailAddress(String emailAddress) {
-        this.emailAddress = emailAddress;
+    public void setEmail(String email) {
+        this.email = email;
     }
 
     @Override
     public int hashCode() {
         int hash = 0;
-        hash += (userId != null ? userId.hashCode() : 0);
+        hash += (trainerID != null ? trainerID.hashCode() : 0);
         return hash;
     }
 
@@ -146,7 +146,7 @@ public class Trainer implements Serializable {
             return false;
         }
         Trainer other = (Trainer) object;
-        if ((this.userId == null && other.userId != null) || (this.userId != null && !this.userId.equals(other.userId))) {
+        if ((this.trainerID == null && other.trainerID != null) || (this.trainerID != null && !this.trainerID.equals(other.trainerID))) {
             return false;
         }
         return true;
@@ -154,7 +154,7 @@ public class Trainer implements Serializable {
 
     @Override
     public String toString() {
-        return "NKD.entity.Trainer[ userId=" + userId + " ]";
+        return "NKD.entity.Trainer[ trainerID=" + trainerID + " ]";
     }
     
 }

@@ -25,7 +25,7 @@ import javax.xml.bind.annotation.XmlRootElement;
 @XmlRootElement
 @NamedQueries({
     @NamedQuery(name = "Account.findAll", query = "SELECT a FROM Account a"),
-    @NamedQuery(name = "Account.findByUserId", query = "SELECT a FROM Account a WHERE a.userId = :userId"),
+    @NamedQuery(name = "Account.findByUserID", query = "SELECT a FROM Account a WHERE a.userID = :userID"),
     @NamedQuery(name = "Account.findByUsername", query = "SELECT a FROM Account a WHERE a.username = :username"),
     @NamedQuery(name = "Account.findByPassword", query = "SELECT a FROM Account a WHERE a.password = :password"),
     @NamedQuery(name = "Account.findByAcVerify", query = "SELECT a FROM Account a WHERE a.acVerify = :acVerify")})
@@ -35,8 +35,8 @@ public class Account implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Basic(optional = false)
-    @Column(name = "user_id")
-    private Integer userId;
+    @Column(name = "userID")
+    private Integer userID;
     @Basic(optional = false)
     @Column(name = "username")
     private String username;
@@ -44,29 +44,29 @@ public class Account implements Serializable {
     @Column(name = "password")
     private String password;
     @Basic(optional = false)
-    @Column(name = "ac_verify")
+    @Column(name = "acVerify")
     private String acVerify;
 
     public Account() {
     }
 
-    public Account(Integer userId) {
-        this.userId = userId;
+    public Account(Integer userID) {
+        this.userID = userID;
     }
 
-    public Account(Integer userId, String username, String password, String acVerify) {
-        this.userId = userId;
+    public Account(Integer userID, String username, String password, String acVerify) {
+        this.userID = userID;
         this.username = username;
         this.password = password;
         this.acVerify = acVerify;
     }
 
-    public Integer getUserId() {
-        return userId;
+    public Integer getUserID() {
+        return userID;
     }
 
-    public void setUserId(Integer userId) {
-        this.userId = userId;
+    public void setUserID(Integer userID) {
+        this.userID = userID;
     }
 
     public String getUsername() {
@@ -96,7 +96,7 @@ public class Account implements Serializable {
     @Override
     public int hashCode() {
         int hash = 0;
-        hash += (userId != null ? userId.hashCode() : 0);
+        hash += (userID != null ? userID.hashCode() : 0);
         return hash;
     }
 
@@ -107,7 +107,7 @@ public class Account implements Serializable {
             return false;
         }
         Account other = (Account) object;
-        if ((this.userId == null && other.userId != null) || (this.userId != null && !this.userId.equals(other.userId))) {
+        if ((this.userID == null && other.userID != null) || (this.userID != null && !this.userID.equals(other.userID))) {
             return false;
         }
         return true;
@@ -115,7 +115,7 @@ public class Account implements Serializable {
 
     @Override
     public String toString() {
-        return "NKD.entity.Account[ userId=" + userId + " ]";
+        return "NKD.entity.Account[ userID=" + userID + " ]";
     }
     
 }

@@ -17,41 +17,41 @@ import javax.persistence.Embeddable;
 public class CourseTrainerPK implements Serializable {
 
     @Basic(optional = false)
-    @Column(name = "user_id")
-    private int userId;
+    @Column(name = "trainerID")
+    private int trainerID;
     @Basic(optional = false)
-    @Column(name = "course_id")
-    private int courseId;
+    @Column(name = "courseID")
+    private int courseID;
 
     public CourseTrainerPK() {
     }
 
-    public CourseTrainerPK(int userId, int courseId) {
-        this.userId = userId;
-        this.courseId = courseId;
+    public CourseTrainerPK(int trainerID, int courseID) {
+        this.trainerID = trainerID;
+        this.courseID = courseID;
     }
 
-    public int getUserId() {
-        return userId;
+    public int getTrainerID() {
+        return trainerID;
     }
 
-    public void setUserId(int userId) {
-        this.userId = userId;
+    public void setTrainerID(int trainerID) {
+        this.trainerID = trainerID;
     }
 
-    public int getCourseId() {
-        return courseId;
+    public int getCourseID() {
+        return courseID;
     }
 
-    public void setCourseId(int courseId) {
-        this.courseId = courseId;
+    public void setCourseID(int courseID) {
+        this.courseID = courseID;
     }
 
     @Override
     public int hashCode() {
         int hash = 0;
-        hash += (int) userId;
-        hash += (int) courseId;
+        hash += (int) trainerID;
+        hash += (int) courseID;
         return hash;
     }
 
@@ -62,10 +62,10 @@ public class CourseTrainerPK implements Serializable {
             return false;
         }
         CourseTrainerPK other = (CourseTrainerPK) object;
-        if (this.userId != other.userId) {
+        if (this.trainerID != other.trainerID) {
             return false;
         }
-        if (this.courseId != other.courseId) {
+        if (this.courseID != other.courseID) {
             return false;
         }
         return true;
@@ -73,7 +73,7 @@ public class CourseTrainerPK implements Serializable {
 
     @Override
     public String toString() {
-        return "NKD.entity.CourseTrainerPK[ userId=" + userId + ", courseId=" + courseId + " ]";
+        return "NKD.entity.CourseTrainerPK[ trainerID=" + trainerID + ", courseID=" + courseID + " ]";
     }
     
 }

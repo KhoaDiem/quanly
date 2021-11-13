@@ -28,9 +28,9 @@ import javax.xml.bind.annotation.XmlRootElement;
 @XmlRootElement
 @NamedQueries({
     @NamedQuery(name = "Trainee.findAll", query = "SELECT t FROM Trainee t"),
-    @NamedQuery(name = "Trainee.findByTraineeId", query = "SELECT t FROM Trainee t WHERE t.traineeId = :traineeId"),
+    @NamedQuery(name = "Trainee.findByTraineeID", query = "SELECT t FROM Trainee t WHERE t.traineeID = :traineeID"),
     @NamedQuery(name = "Trainee.findByTraineeName", query = "SELECT t FROM Trainee t WHERE t.traineeName = :traineeName"),
-    @NamedQuery(name = "Trainee.findByDateOfBirth", query = "SELECT t FROM Trainee t WHERE t.dateOfBirth = :dateOfBirth"),
+    @NamedQuery(name = "Trainee.findByDob", query = "SELECT t FROM Trainee t WHERE t.dob = :dob"),
     @NamedQuery(name = "Trainee.findByEducation", query = "SELECT t FROM Trainee t WHERE t.education = :education"),
     @NamedQuery(name = "Trainee.findByProgramingLanguage", query = "SELECT t FROM Trainee t WHERE t.programingLanguage = :programingLanguage"),
     @NamedQuery(name = "Trainee.findByToeicScore", query = "SELECT t FROM Trainee t WHERE t.toeicScore = :toeicScore"),
@@ -43,26 +43,26 @@ public class Trainee implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Basic(optional = false)
-    @Column(name = "trainee_id")
-    private Integer traineeId;
+    @Column(name = "traineeID")
+    private Integer traineeID;
     @Basic(optional = false)
     @Column(name = "traineeName")
     private String traineeName;
     @Basic(optional = false)
-    @Column(name = "date_of_birth")
+    @Column(name = "dob")
     @Temporal(TemporalType.DATE)
-    private Date dateOfBirth;
+    private Date dob;
     @Basic(optional = false)
     @Column(name = "education")
     private String education;
     @Basic(optional = false)
-    @Column(name = "programing_language")
+    @Column(name = "programingLanguage")
     private String programingLanguage;
     @Basic(optional = false)
-    @Column(name = "toeic_score")
+    @Column(name = "toeicScore")
     private String toeicScore;
     @Basic(optional = false)
-    @Column(name = "expericen_detail")
+    @Column(name = "expericenDetail")
     private String expericenDetail;
     @Basic(optional = false)
     @Column(name = "department")
@@ -74,14 +74,14 @@ public class Trainee implements Serializable {
     public Trainee() {
     }
 
-    public Trainee(Integer traineeId) {
-        this.traineeId = traineeId;
+    public Trainee(Integer traineeID) {
+        this.traineeID = traineeID;
     }
 
-    public Trainee(Integer traineeId, String traineeName, Date dateOfBirth, String education, String programingLanguage, String toeicScore, String expericenDetail, String department, String location) {
-        this.traineeId = traineeId;
+    public Trainee(Integer traineeID, String traineeName, Date dob, String education, String programingLanguage, String toeicScore, String expericenDetail, String department, String location) {
+        this.traineeID = traineeID;
         this.traineeName = traineeName;
-        this.dateOfBirth = dateOfBirth;
+        this.dob = dob;
         this.education = education;
         this.programingLanguage = programingLanguage;
         this.toeicScore = toeicScore;
@@ -90,12 +90,12 @@ public class Trainee implements Serializable {
         this.location = location;
     }
 
-    public Integer getTraineeId() {
-        return traineeId;
+    public Integer getTraineeID() {
+        return traineeID;
     }
 
-    public void setTraineeId(Integer traineeId) {
-        this.traineeId = traineeId;
+    public void setTraineeID(Integer traineeID) {
+        this.traineeID = traineeID;
     }
 
     public String getTraineeName() {
@@ -106,12 +106,12 @@ public class Trainee implements Serializable {
         this.traineeName = traineeName;
     }
 
-    public Date getDateOfBirth() {
-        return dateOfBirth;
+    public Date getDob() {
+        return dob;
     }
 
-    public void setDateOfBirth(Date dateOfBirth) {
-        this.dateOfBirth = dateOfBirth;
+    public void setDob(Date dob) {
+        this.dob = dob;
     }
 
     public String getEducation() {
@@ -165,7 +165,7 @@ public class Trainee implements Serializable {
     @Override
     public int hashCode() {
         int hash = 0;
-        hash += (traineeId != null ? traineeId.hashCode() : 0);
+        hash += (traineeID != null ? traineeID.hashCode() : 0);
         return hash;
     }
 
@@ -176,7 +176,7 @@ public class Trainee implements Serializable {
             return false;
         }
         Trainee other = (Trainee) object;
-        if ((this.traineeId == null && other.traineeId != null) || (this.traineeId != null && !this.traineeId.equals(other.traineeId))) {
+        if ((this.traineeID == null && other.traineeID != null) || (this.traineeID != null && !this.traineeID.equals(other.traineeID))) {
             return false;
         }
         return true;
@@ -184,7 +184,7 @@ public class Trainee implements Serializable {
 
     @Override
     public String toString() {
-        return "NKD.entity.Trainee[ traineeId=" + traineeId + " ]";
+        return "NKD.entity.Trainee[ traineeID=" + traineeID + " ]";
     }
     
 }

@@ -25,7 +25,7 @@ import javax.xml.bind.annotation.XmlRootElement;
 @XmlRootElement
 @NamedQueries({
     @NamedQuery(name = "Course.findAll", query = "SELECT c FROM Course c"),
-    @NamedQuery(name = "Course.findByCourseId", query = "SELECT c FROM Course c WHERE c.courseId = :courseId"),
+    @NamedQuery(name = "Course.findByCourseID", query = "SELECT c FROM Course c WHERE c.courseID = :courseID"),
     @NamedQuery(name = "Course.findByCourseName", query = "SELECT c FROM Course c WHERE c.courseName = :courseName"),
     @NamedQuery(name = "Course.findByDescription", query = "SELECT c FROM Course c WHERE c.description = :description")})
 public class Course implements Serializable {
@@ -34,8 +34,8 @@ public class Course implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Basic(optional = false)
-    @Column(name = "course_id")
-    private Integer courseId;
+    @Column(name = "courseID")
+    private Integer courseID;
     @Basic(optional = false)
     @Column(name = "courseName")
     private String courseName;
@@ -46,22 +46,22 @@ public class Course implements Serializable {
     public Course() {
     }
 
-    public Course(Integer courseId) {
-        this.courseId = courseId;
+    public Course(Integer courseID) {
+        this.courseID = courseID;
     }
 
-    public Course(Integer courseId, String courseName, String description) {
-        this.courseId = courseId;
+    public Course(Integer courseID, String courseName, String description) {
+        this.courseID = courseID;
         this.courseName = courseName;
         this.description = description;
     }
 
-    public Integer getCourseId() {
-        return courseId;
+    public Integer getCourseID() {
+        return courseID;
     }
 
-    public void setCourseId(Integer courseId) {
-        this.courseId = courseId;
+    public void setCourseID(Integer courseID) {
+        this.courseID = courseID;
     }
 
     public String getCourseName() {
@@ -83,7 +83,7 @@ public class Course implements Serializable {
     @Override
     public int hashCode() {
         int hash = 0;
-        hash += (courseId != null ? courseId.hashCode() : 0);
+        hash += (courseID != null ? courseID.hashCode() : 0);
         return hash;
     }
 
@@ -94,7 +94,7 @@ public class Course implements Serializable {
             return false;
         }
         Course other = (Course) object;
-        if ((this.courseId == null && other.courseId != null) || (this.courseId != null && !this.courseId.equals(other.courseId))) {
+        if ((this.courseID == null && other.courseID != null) || (this.courseID != null && !this.courseID.equals(other.courseID))) {
             return false;
         }
         return true;
@@ -102,7 +102,7 @@ public class Course implements Serializable {
 
     @Override
     public String toString() {
-        return "NKD.entity.Course[ courseId=" + courseId + " ]";
+        return "NKD.entity.Course[ courseID=" + courseID + " ]";
     }
     
 }

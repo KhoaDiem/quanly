@@ -17,41 +17,41 @@ import javax.persistence.Embeddable;
 public class CourseTopicPK implements Serializable {
 
     @Basic(optional = false)
-    @Column(name = "course_id")
-    private int courseId;
+    @Column(name = "courseID")
+    private int courseID;
     @Basic(optional = false)
-    @Column(name = "topic_id")
-    private int topicId;
+    @Column(name = "topicID")
+    private int topicID;
 
     public CourseTopicPK() {
     }
 
-    public CourseTopicPK(int courseId, int topicId) {
-        this.courseId = courseId;
-        this.topicId = topicId;
+    public CourseTopicPK(int courseID, int topicID) {
+        this.courseID = courseID;
+        this.topicID = topicID;
     }
 
-    public int getCourseId() {
-        return courseId;
+    public int getCourseID() {
+        return courseID;
     }
 
-    public void setCourseId(int courseId) {
-        this.courseId = courseId;
+    public void setCourseID(int courseID) {
+        this.courseID = courseID;
     }
 
-    public int getTopicId() {
-        return topicId;
+    public int getTopicID() {
+        return topicID;
     }
 
-    public void setTopicId(int topicId) {
-        this.topicId = topicId;
+    public void setTopicID(int topicID) {
+        this.topicID = topicID;
     }
 
     @Override
     public int hashCode() {
         int hash = 0;
-        hash += (int) courseId;
-        hash += (int) topicId;
+        hash += (int) courseID;
+        hash += (int) topicID;
         return hash;
     }
 
@@ -62,10 +62,10 @@ public class CourseTopicPK implements Serializable {
             return false;
         }
         CourseTopicPK other = (CourseTopicPK) object;
-        if (this.courseId != other.courseId) {
+        if (this.courseID != other.courseID) {
             return false;
         }
-        if (this.topicId != other.topicId) {
+        if (this.topicID != other.topicID) {
             return false;
         }
         return true;
@@ -73,7 +73,7 @@ public class CourseTopicPK implements Serializable {
 
     @Override
     public String toString() {
-        return "NKD.entity.CourseTopicPK[ courseId=" + courseId + ", topicId=" + topicId + " ]";
+        return "NKD.entity.CourseTopicPK[ courseID=" + courseID + ", topicID=" + topicID + " ]";
     }
     
 }
