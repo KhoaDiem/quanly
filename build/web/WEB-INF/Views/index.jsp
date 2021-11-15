@@ -49,10 +49,7 @@
                 <div class="col-md-12">
                   <input class="form-control" type="text" placeholder="Home page">
                 </div>
-                  <div>
-                      <img src="Admin.png">
-                  </div> 
-              </div>
+                  
             </div>
               
       </div>

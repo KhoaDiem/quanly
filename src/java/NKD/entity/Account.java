@@ -117,5 +117,8 @@ public class Account implements Serializable {
     public String toString() {
         return "NKD.entity.Account[ userID=" + userID + " ]";
     }
+
+    
+
     
 }

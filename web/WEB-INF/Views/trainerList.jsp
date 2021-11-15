@@ -35,7 +35,7 @@
                 </a>
                 
                 <a href="../quanly/listTrainee.html" class="list-group-item"><span class="glyphicon glyphicon-user" aria-hidden="true"></span> Trainee Management</a>
-                <a href="../quanly/listSource.html" class="list-group-item"><span class="glyphicon glyphicon-user" aria-hidden="true"></span> Source Management</a>
+                <a href="../quanly/listCourse.html" class="list-group-item"><span class="glyphicon glyphicon-user" aria-hidden="true"></span> Course Management</a>
                 <a href="../quanly/listTopic.html" class="list-group-item"><span class="glyphicon glyphicon-user" aria-hidden="true"></span> Topic Management</a>
                  <a href="../quanly/listCategory.html" class="list-group-item"><span class="glyphicon glyphicon-user" aria-hidden="true"></span> Category Management</a>
             </div>
@@ -69,7 +69,7 @@
                         <tbody>
                             <c:forEach items="${trainerList}" var="item" varStatus="loop">
                                 <tr>
-                                    <td>${item.trainerID}</td>
+                                    <td>${loop.index + 1}</td><!-- comment -->
                                     <td>${item.trainerName}</td>
                                     <td>${item.education}</td>
                                     <td>${item.typework}</td>
@@ -77,13 +77,13 @@
                                     <td>${item.telephone}</td>
                                     <td>${item.email}</td>
                                     <td>
-                                        <a href="editTrainer.html"> 
-                                            <button class="btn btn-success">Edit</button>
+                                        <a href="addTrainer.html?id=${item.trainerID}"> 
+                                            <button class="btn btn-warning">Edit</button>
                                         </a>
                                     </td>
                                     <td>
                                         <a href="deleteTrainer.html"> 
-                                            <button class="btn btn-success">Detele</button>
+                                            <button class="btn btn-danger">Detele</button>
                                         </a>
                                     </td>
                                 </tr>

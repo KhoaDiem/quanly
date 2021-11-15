@@ -29,12 +29,13 @@
            <div class="list-group">
                <a href="../index.html" class="list-group-item"><span class="glyphicon glyphicon-user" aria-hidden="true"></span>  Dashboard</a>
                 <a href="../quanly/listAccount.html" class="list-group-item"><span class="glyphicon glyphicon-list-alt" aria-hidden="true"></span> Account Management</a>
-                 <a href="../quanly/listTrainer.html" class="list-group-item active main-color-bg">
-                    <span class="glyphicon glyphicon-cog" aria-hidden="true"></span> Trainer Management
-                </a>
                 
-                <a href="../quanly/listTrainee.html" class="list-group-item"><span class="glyphicon glyphicon-user" aria-hidden="true"></span> Trainee Management</a>
-                <a href="../quanly/listSource.html" class="list-group-item"><span class="glyphicon glyphicon-user" aria-hidden="true"></span> Source Management</a>
+                
+                <a href="../quanly/listTrainer.html" class="list-group-item"><span class="glyphicon glyphicon-user" aria-hidden="true"></span> Trainer Management</a>
+                 <a href="../quanly/listTrainee.html" class="list-group-item active main-color-bg">
+                    <span class="glyphicon glyphicon-cog" aria-hidden="true"></span> Trainee Management
+                </a>
+                <a href="../quanly/listCourse.html" class="list-group-item"><span class="glyphicon glyphicon-user" aria-hidden="true"></span> Course Management</a>
                 <a href="../quanly/listTopic.html" class="list-group-item"><span class="glyphicon glyphicon-user" aria-hidden="true"></span> Topic Management</a>
                  <a href="../quanly/listCategory.html" class="list-group-item"><span class="glyphicon glyphicon-user" aria-hidden="true"></span> Category Management</a>
             </div>
@@ -42,12 +43,12 @@
       <div class="col-sm-10" style="background-color:lavenderblush;">
           <div class="panel panel-default">
             <div class="panel-heading main-color-bg">
-              <h3 class="panel-title">Trainer</h3>
+              <h3 class="panel-title">Trainee</h3>
             </div>
             <div class="panel-body">
               <div class="row">
                 <div class="col-md-12">
-                  <input class="form-control" type="text" placeholder="Filter Trainer">
+                  <input class="form-control" type="text" placeholder="Filter Trainee">
                 </div>
               </div>
               <br>
@@ -56,10 +57,11 @@
                             <tr>
                                 <th>ID</th>
                                 <th>Họ Và Tên</th>
-                                <th>Tổ chức giáo dục</th>
+                                <th>Ngày Sinh</th>
+                                <th>Trường</th>
                                 <th>Ngôn ngữ </th>
                                 <th>Điểm Topic</th> 
-                                <th>Kinh nghiệm thực tế</th>
+                                <th>Kinh nghiệm</th>
                                 <th>Lớp học</th>
                                 <th>Chức vụ</th>
                                 <th></th>
@@ -67,9 +69,9 @@
                             </tr>
                         </thead> 
                         <tbody>
-                            <c:forEach items="${TraineeList}" var="item" varStatus="loop">
+                            <c:forEach items="${traineeList}" var="item" varStatus="loop">
                                 <tr>
-                                    <td>${item.traineeID}</td>
+                                    <td>${loop.index + 1}</td>
                                     <td>${item.traineeName}</td>
                                     <td>${item.dob}</td>
                                     <td>${item.education}</td>
@@ -79,13 +81,13 @@
                                     <td>${item.department}</td>
                                      <td>${item.location}</td>
                                     <td>
-                                        <a href="editTrainee.html"> 
-                                            <button class="btn btn-success">Edit</button>
+                                        <a href="addTrainee.html?id=${item.traineeID}"> 
+                                            <button class="btn btn-warning">Edit</button>
                                         </a>
                                     </td>
                                     <td>
                                         <a href="deleteTrainee.html"> 
-                                            <button class="btn btn-success">Detele</button>
+                                            <button class="btn btn-danger">Detele</button>
                                         </a>
                                     </td>
                                 </tr>

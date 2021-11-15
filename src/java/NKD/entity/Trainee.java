@@ -5,7 +5,6 @@
 package NKD.entity;
 
 import java.io.Serializable;
-import java.util.Date;
 import javax.persistence.Basic;
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -15,8 +14,6 @@ import javax.persistence.Id;
 import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
 import javax.persistence.Table;
-import javax.persistence.Temporal;
-import javax.persistence.TemporalType;
 import javax.xml.bind.annotation.XmlRootElement;
 
 /**
@@ -50,8 +47,7 @@ public class Trainee implements Serializable {
     private String traineeName;
     @Basic(optional = false)
     @Column(name = "dob")
-    @Temporal(TemporalType.DATE)
-    private Date dob;
+    private String dob;
     @Basic(optional = false)
     @Column(name = "education")
     private String education;
@@ -78,7 +74,7 @@ public class Trainee implements Serializable {
         this.traineeID = traineeID;
     }
 
-    public Trainee(Integer traineeID, String traineeName, Date dob, String education, String programingLanguage, String toeicScore, String expericenDetail, String department, String location) {
+    public Trainee(Integer traineeID, String traineeName, String dob, String education, String programingLanguage, String toeicScore, String expericenDetail, String department, String location) {
         this.traineeID = traineeID;
         this.traineeName = traineeName;
         this.dob = dob;
@@ -106,11 +102,11 @@ public class Trainee implements Serializable {
         this.traineeName = traineeName;
     }
 
-    public Date getDob() {
+    public String getDob() {
         return dob;
     }
 
-    public void setDob(Date dob) {
+    public void setDob(String dob) {
         this.dob = dob;
     }
 

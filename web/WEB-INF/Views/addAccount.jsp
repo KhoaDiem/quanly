@@ -5,9 +5,9 @@
 <!DOCTYPE html>
 <html>
     <head>
-        
+        <title>Editor Account</title>
         <!-- Latest compiled and minified CSS -->
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"/>
 
         <!-- jQuery library -->
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
@@ -46,47 +46,40 @@
             <div class="col-sm-10" style="background-color:lavenderblush;">
                 <div class="panel panel-default">
                     <div class="panel-heading main-color-bg">
-                        <h3 class="panel-title">ADD Account</h3>
+                        <h5 class="panel-title">Add Account</h5>
                     </div>
                     <div class="panel-body">
                         <div class="row">
-                            
                         </div>
                         <br>
                         <div class="container">
                             <div class="panel panel-primary">
-                                
                                 <div class="panel-body">
-                                    <form method="post" action="saveAccount.html">
+                                    <form method="POST" action="save.html">
                                         <div class="form-group">
-                                            <label for="usr">ID:</label>
-                                            <input required="true" type="ID" class="form-control" id="userID">
-                                        </div>
-                                        <div class="form-group">
-                                            <label for="usr">Username:</label>
-                                            <input required="true" type="text" class="form-control" id="username">
-                                        </div>
-                                        <div class="form-group">
-                                            <label for="email">Password:</label>
-                                            <input required="true" type="password" class="form-control" id="password">
-                                        </div>
-                                        <div class="form-group">
-                                            <label for="email">AcVerify:</label>
-                                            <input required="true" type="password" class="form-control" id="password">
-                                        </div>
-                                        <a href="saveAccount.html"> 
+                                            
+                                            <div class="form-group">
+                                                <label for="username">Username:</label>
+                                                
+                                                <input required="true" type="text" class="form-control" id="username" name="username"value="${account.username}"/>
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="password">Password:</label>
+                                                <input required="true"  type="text" class="form-control" id="password" name="password" value="${account.password}"/>
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="acVerify">Ac Verify:</label>
+                                                <input required="true"  type="text" class="form-control" id="acVerify" name="acVerify" value="${account.acVerify}"/>
+                                            </div>
                                             <button class="btn btn-success">Add Account</button>
-                                        </a>
+                                        </div>
                                     </form>
                                 </div>
                             </div>
                         </div>
-
                     </div>
                 </div>
             </div>
         </div>
-
-
     </body>
 </html>

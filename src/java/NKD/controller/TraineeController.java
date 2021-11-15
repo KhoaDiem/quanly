@@ -29,12 +29,12 @@ public class TraineeController {
     
     }
     @RequestMapping(value="/addTrainee",method = RequestMethod.GET)
-    public String AdddTrainee(){  
-        return "traineeList";
+    public String adddTrainee(){  
+        return "addTrainee";
     }
      @RequestMapping(value="/saveTrainee",method = RequestMethod.POST)
     public String Save(){  
-        return "traineeList";
+        return "redirect:traineeList.html";
     }
      @RequestMapping(value="/deleteTrainee",method = RequestMethod.POST)
     public String DeleteTrainee(){  
