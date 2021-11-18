@@ -5,7 +5,7 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
-        <title>Quản lý nhân sự</title>
+        <title>Category Management</title>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
@@ -22,7 +22,7 @@
     <input class="form-control mr-sm-10" type="text" placeholder="Search">
   </form>
    </nav>
-    <h7>---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------</h7>
+    <h7>------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------</h7>
     <div class="container-fluid">
   <div class="row">
       <div class="col-sm-2" style="background-color:lavender;">

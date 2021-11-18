@@ -8,13 +8,10 @@
         <title>Editor Account</title>
         <!-- Latest compiled and minified CSS -->
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"/>
-
         <!-- jQuery library -->
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-
         <!-- Popper JS -->
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
-
         <!-- Latest compiled JavaScript -->
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
     </head>
@@ -27,7 +24,7 @@
                 <input class="form-control mr-sm-10" type="text" placeholder="Search">
             </form>
         </nav>
-    <h7>---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------</h7>
+    <h7>------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------</h7>
     <div class="container-fluid">
         <div class="row">
             <div class="col-sm-2" style="background-color:lavender;">
@@ -55,24 +52,24 @@
                         <div class="container">
                             <div class="panel panel-primary">
                                 <div class="panel-body">
-                                    <form method="POST" action="save.html">
-                                        <div class="form-group">
-                                            
+                                    <form method="post" action="save.html"> 
+                                        <!<!-- username -->
                                             <div class="form-group">
                                                 <label for="username">Username:</label>
-                                                
-                                                <input required="true" type="text" class="form-control" id="username" name="username"value="${account.username}"/>
+                                                <input value="${account.userID}" type="number" class="form-control" id="id" name="userID" hidden="true"/>
+                                                <input required="true" value="${account.username}" type="text" class="form-control" id="username" name="username"/>
                                             </div>
+                                            <!<!-- password -->
                                             <div class="form-group">
                                                 <label for="password">Password:</label>
-                                                <input required="true"  type="text" class="form-control" id="password" name="password" value="${account.password}"/>
+                                                <input required="true" value="${account.password}" type="text" class="form-control" id="password" name="password"/>
                                             </div>
+                                            <!<!-- ac Verify -->
                                             <div class="form-group">
                                                 <label for="acVerify">Ac Verify:</label>
-                                                <input required="true"  type="text" class="form-control" id="acVerify" name="acVerify" value="${account.acVerify}"/>
+                                                <input required="true" value="${account.acVerify}" type="text" class="form-control" id="acVerify" name="acVerify"/>
                                             </div>
-                                            <button class="btn btn-success">Add Account</button>
-                                        </div>
+                                            <button class="btn btn-success">Add Account</button>                                       
                                     </form>
                                 </div>
                             </div>

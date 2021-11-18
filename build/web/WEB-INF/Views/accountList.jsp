@@ -23,7 +23,7 @@
                 <input class="form-control mr-sm-10" type="text" placeholder="Search">
             </form>
         </nav>
-    <h7>---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------</h7>
+    <h7>------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------</h7>
     <div class="container-fluid">
         <div class="row">
             <div class="col-sm-2" style="background-color:lavender;">
@@ -72,46 +72,49 @@
                                         <td>${loop.index + 1}</td>
                                         <td>${item.username}</td>
                                         <td>${item.password}</td>
-
                                         <td>${item.acVerify}</td>
-
                                         <td>
                                             <a href="addAccount.html?id=${item.userID}"> 
                                                 <button class="btn btn-warning">Edit</button>
                                             </a>
                                         </td>
                                         <td>
-                                            <a href=""> 
-                                                <button class="btn btn-danger" onclick="="deleteAccount(${item.userID})">Detele</button>
-                                            </a>
+                                            
+                                                <button class="btn btn-danger" onclick ="deleteAccount(${item.userID})">Detele</button>
+                                           
                                         </td>
                                     </tr>
                                 </c:forEach>
                             </tbody>
                         </table>
-                        <a href="addAccount.html"> 
+                                               <a href="addAccount.html"> 
                             <button class="btn btn-success">Add Account</button>
                         </a>
-                    </div>  
+                    </div> 
+                    
+
                 </div>
+
+
             </div>
-            <script>
-                function deleteAccount(userID) {
-                    var option = confirm('Ban co chac chan muon xoa du lieu nay khong???')
-                    if (!option)
-                        return
+            
+<script>
+                function deleteAccount(id) {
+                    var option = confirm('Ban co chac chan muon xoa account nay khong?');
+                    if (!option)return;
+                    console.log(id)
 
                     $.post('deleteAccount.html', {
-                        'id': id
-                    }, function (Data) {
+                        id: id
+                    }, function (data) {
                         location.reload()
+
                     })
-           //            $.post("delete/"+id+".html", {}, function(data) {
-           //                location.reload()
-           //            })
                 }
             </script>
             <!<!-- End content -->
         </div>
+        
+
     </body>
 </html>

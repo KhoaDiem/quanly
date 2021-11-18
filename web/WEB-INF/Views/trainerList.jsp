@@ -6,7 +6,7 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
-        <title>Quản lý nhân sự</title>
+        <title>Trainer Management</title>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
@@ -23,7 +23,7 @@
     <input class="form-control mr-sm-10" type="text" placeholder="Search">
   </form>
    </nav>
-    <h7>---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------</h7>
+    <h7>------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------</h7>
     <div class="container-fluid">
   <div class="row">
       <div class="col-sm-2" style="background-color:lavender;">
@@ -33,7 +33,6 @@
                  <a href="../quanly/listTrainer.html" class="list-group-item active main-color-bg">
                     <span class="glyphicon glyphicon-cog" aria-hidden="true"></span> Trainer Management
                 </a>
-                
                 <a href="../quanly/listTrainee.html" class="list-group-item"><span class="glyphicon glyphicon-user" aria-hidden="true"></span> Trainee Management</a>
                 <a href="../quanly/listCourse.html" class="list-group-item"><span class="glyphicon glyphicon-user" aria-hidden="true"></span> Course Management</a>
                 <a href="../quanly/listTopic.html" class="list-group-item"><span class="glyphicon glyphicon-user" aria-hidden="true"></span> Topic Management</a>
@@ -82,9 +81,7 @@
                                         </a>
                                     </td>
                                     <td>
-                                        <a href="deleteTrainer.html"> 
-                                            <button class="btn btn-danger">Detele</button>
-                                        </a>
+                                            <button class="btn btn-danger" onclick ="deleteTrainer(${item.trainerID})">Detele</button>
                                     </td>
                                 </tr>
                             </c:forEach>
@@ -96,8 +93,20 @@
             </div>
       </div>
   </div>
-</div>
-           
-        
+      <script>
+                function deleteTrainer(id) {
+                    var option = confirm('Ban co chac chan muon xoa Trainer nay khong?');
+                    if (!option)return;
+                    console.log(id)
+
+                    $.post('deleteTrainer.html', {
+                        id: id
+                    }, function (data) {
+                        location.reload()
+
+                    })
+                }
+            </script>
+</div>     
 </body>
 </html>

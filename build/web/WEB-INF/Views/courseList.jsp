@@ -5,7 +5,7 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
-        <title>Quản lý nhân sự</title>
+        <title>Course Management</title>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
@@ -22,7 +22,7 @@
     <input class="form-control mr-sm-10" type="text" placeholder="Search">
   </form>
    </nav>
-    <h7>---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------</h7>
+    <h7>------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------</h7>
     <div class="container-fluid">
   <div class="row">
       <div class="col-sm-2" style="background-color:lavender;">
@@ -75,10 +75,8 @@
                                             <button class="btn btn-warning">Edit</button>
                                         </a>
                                     </td>
-                                    <td>
-                                        <a href="deleteCourse.html"> 
-                                            <button class="btn btn-danger">Detele</button>
-                                        </a>
+                                    <td>   
+                                            <button class="btn btn-danger" onclick="deleteCourse(${item.courseID})">Detele</button> 
                                     </td>
                                 </tr>
                             </c:forEach>
@@ -90,8 +88,20 @@
             </div>
       </div>
   </div>
-</div>
-           
-        
+      <script>
+                function deleteCourse(id) {
+                    var option = confirm('Ban co chac chan muon xoa Course nay khong?');
+                    if (!option)return;
+                    console.log(id)
+
+                    $.post('deleteCourse.html', {
+                        id: id
+                    }, function (data) {
+                        location.reload()
+
+                    })
+                }
+            </script>
+</div>   
 </body>
 </html>
